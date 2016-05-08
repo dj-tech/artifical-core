@@ -1,0 +1,2 @@
+void gestore(int signum)
+{...}
