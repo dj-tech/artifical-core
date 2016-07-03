@@ -35,38 +35,6 @@
 <script src="https://rawgit.com/angular/bower-angular/master/angular.min.js"></script>
 </script>
 
-<button> start script
-<script>
-  // Creates the provider object.
-  var provider = new firebase.auth.FacebookAuthProvider();
-  // You can add additional scopes to the provider:
-  provider.addScope('email');
-  provider.addScope('user_friends');
-  // Link with popup:
-  user.linkWithPopup(provider).then(function(result) {
-  // The firebase.User instance:
-  var user = result.user;
-  // The Facebook firebase.auth.AuthCredential containing the Facebook
-  // access token:
-  var credential = result.credential;
-  }, function(error) {
-  // An error happened.
-});
-</script>
-
-<script>
-  firebase.database().goOnline();
-</script>
-
-<script>
-  // Find all dinosaurs whose names come before Pterodactyl lexicographically.
-  var ref = firebase.database().ref("dinosaurs");
-  ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
-  console.log(snapshot.key);
-});
-</script>
-</button>
-
 <input type="file" id="input">
 
 <h1>This is a Heading</h1>
@@ -104,8 +72,36 @@
   // ...
 });
 </script>
-<button>view database
-  <a herf = "https://pinwcore.firebaseio.com" database></a>
+<button> start script
+<script>
+  // Creates the provider object.
+  var provider = new firebase.auth.FacebookAuthProvider();
+  // You can add additional scopes to the provider:
+  provider.addScope('email');
+  provider.addScope('user_friends');
+  // Link with popup:
+  user.linkWithPopup(provider).then(function(result) {
+  // The firebase.User instance:
+  var user = result.user;
+  // The Facebook firebase.auth.AuthCredential containing the Facebook
+  // access token:
+  var credential = result.credential;
+  }, function(error) {
+  // An error happened.
+});
+</script>
+
+<script>
+  firebase.database().goOnline();
+</script>
+
+<script>
+  // Find all dinosaurs whose names come before Pterodactyl lexicographically.
+  var ref = firebase.database().ref("dinosaurs");
+  ref.orderByKey().endAt("pterodactyl").on("child_added", function(snapshot) {
+  console.log(snapshot.key);
+});
+</script>
 </button>
 
 <script>
