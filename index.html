@@ -38,6 +38,18 @@
 <input type="file" id="input">
 
 <h1>This is a Heading</h1>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  var config = {
+    apiKey: "apiKey",
+    authDomain: "projectId.firebaseapp.com",
+    databaseURL: "https://databaseName.firebaseio.com",
+    storageBucket: "bucket.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
 <p>This is a paragraph.</p>
 
 <script>
