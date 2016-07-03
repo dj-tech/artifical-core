@@ -49,10 +49,18 @@
     storageBucket: "bucket.appspot.com",
   };
   firebase.initializeApp(config);
+  function writeUserData(structur, gene, number) {
+  firebase.database().ref('structur/' + gene).set({
+    username: gene,
+    email: number
+  });
+}
 </script>
 <p>This is a paragraph.</p>
 
-<a herf = "https://pinwcore.firebaseio.com" database></a>
+<button>view database
+  <a herf = "https://pinwcore.firebaseio.com" database></a>
+</button>
 
 <script>
 var var2;
