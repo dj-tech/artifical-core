@@ -3,6 +3,30 @@
 <head>
 <title>PinW</title>
 <script src="https://rawgit.com/aFarkas/html5shiv/gh-pages/dist/html5shiv.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/path/to/d3-transform.js"></script>
+<script>
+d3.select('svg').selectAll('g')
+    .data([{ size: 5 }, { size: 10 }])
+  .enter().append('g')
+    .attr('transform', function(d, i) {
+      return "translate(20," + d.size * 10 + ") rotate (40) scale(" + ( d.size + 2 ) + ")");
+    });
+ var transform = d3.svg.transform()
+    .translate(function(d) { return [20, d.size * 10] })
+    .rotate(40)
+    .scale(function(d) { return d.size + 2 });
+
+var svg = d3.select('svg.example1').selectAll('g')
+    .data([{ size: 5 }, { size: 10 }])
+    .enter()
+    .append('g')
+    .attr('transform', transform);
+</script>
+<svg>
+  <g transform="translate(20,50) rotate(40) scale(7)"></g>
+  <g transform="translate(20,100) rotate(40) scale(12)"></g>
+</svg>
 <link rel="stylesheet" href="normalize.css">
 <style>
   /*! suit-test v0.1.0 | MIT License | github.com/suitcss */
